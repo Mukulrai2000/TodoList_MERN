@@ -11,6 +11,7 @@ const TodoForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addNewTodo(text));
+    setText("");
   };
 
   return (
