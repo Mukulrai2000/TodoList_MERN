@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getAllTodos } from "../redux/actions/index";
 
+import TodoListing from "./TodoListing";
+
 const TodoList = () => {
   const dispatch = useDispatch();
   const allTodos = useSelector((state) => state.todos);
@@ -19,7 +21,7 @@ const TodoList = () => {
         <ul>
           {allTodos.length > 0 ? (
             allTodos?.map((ele) => {
-              return <li key={ele?._id}>{ele?.data}</li>;
+              return <TodoListing key={ele?._id} todo={ele} />;
             })
           ) : (
             <p>Currently there is no todo</p>
