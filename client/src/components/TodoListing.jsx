@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
 const TodoListing = ({ todo }) => {
+  console.log("todo Data", todo);
   return (
     <Fragment>
       <li>
