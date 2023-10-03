@@ -1,15 +1,14 @@
 import React, { Fragment } from "react";
 
 const TodoListing = ({ todo }) => {
-  console.log("todo Data", todo);
   return (
     <Fragment>
-      <li>
+      <li className="task">
         <span>{todo?.data}</span>
-        <span>
+        <span className="icon">
           <i className="fas fa-trash" />
         </span>
-        <span>
+        <span className="icon">
           <i className="fas fa-pen" />
         </span>
       </li>
