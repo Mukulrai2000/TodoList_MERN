@@ -2,11 +2,19 @@ import React, { Fragment, useState } from "react";
 
 import { useDispatch } from "react-redux";
 
-import { toggleTodo } from "../redux/actions";
+import { toggleTodo, updateTodo } from "../redux/actions";
 
 const TodoListing = ({ todo }) => {
   const dispatch = useDispatch();
   const [editClick, setEditClick] = useState(false);
+  const [editText, setEditText] = useState(todo?.data);
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+
+    setEditClick(!editClick);
+    dispatch(updateTodo(todo?._id, editText));
+  };
 
   return (
     <Fragment>
@@ -20,8 +28,16 @@ const TodoListing = ({ todo }) => {
       >
         <span style={{ display: editClick ? "none" : "" }}>{todo?.data}</span>
 
-        <form>
-          <input type="text" value={todo?.data} />
+        <form
+          style={{ display: editClick ? "inline" : "none" }}
+          onSubmit={(e) => handleEdit(e)}
+        >
+          <input
+            type="text"
+            className="edit-todo"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+          />
         </form>
 
         <span className="icon">

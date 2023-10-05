@@ -8,3 +8,4 @@ input {font-size: 20px;color: goldenrod;width: 100%;border: none;outline: none;b
 .task span {color: #ffffff;}
 .icon{float: right;margin-right: 20px;}
 article{display: grid;}
+.edit-todo{width: 85%;font-size: 16px;color: #fff;background-color: darkgoldenrod;}
