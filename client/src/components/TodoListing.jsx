@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 
 import { useDispatch } from "react-redux";
 
-import { toggleTodo, updateTodo } from "../redux/actions";
+import { toggleTodo, updateTodo, deleteTodo } from "../redux/actions";
 
 const TodoListing = ({ todo }) => {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const TodoListing = ({ todo }) => {
           />
         </form>
 
-        <span className="icon">
+        <span className="icon" onClick={() => dispatch(deleteTodo(todo?._id))}>
           <i className="fas fa-trash" />
         </span>
         <span className="icon" onClick={() => setEditClick(!editClick)}>
