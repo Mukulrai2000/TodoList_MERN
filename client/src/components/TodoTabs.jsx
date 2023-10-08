@@ -1,15 +1,28 @@
-import React,{Fragment} from 'react'
+import React, { Fragment } from "react";
 
-const TodoTabs = () => {
+import { useDispatch } from "react-redux";
+
+import { TABS } from "../redux/actions/type";
+import { toggleTab } from "../redux/actions";
+
+const TodoTabs = ({ currentTab }) => {
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
-        {/* <h1>For Preview</h1> */}
-        <h1>For Preview</h1>
-        <h1>For Preview</h1>
-        <h1>For Preview</h1>
-        {/* <h1>For Preview</h1> */}
+      {TABS.map((tab, index) => {
+        return (
+          <button
+            key={index}
+            className={tab === currentTab ? "button selected" : "button"}
+            onClick={() => dispatch(toggleTab(tab))}
+          >
+            {tab}
+          </button>
+        );
+      })}
     </Fragment>
-  )
-}
+  );
+};
 
-export default TodoTabs
+export default TodoTabs;

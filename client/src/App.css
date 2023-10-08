@@ -7,5 +7,10 @@ input {font-size: 20px;color: goldenrod;width: 100%;border: none;outline: none;b
 .task {background-color: goldenrod;padding: 15px;margin: 5px;overflow-x: hidden;border-radius: 5px;cursor: pointer;}
 .task span {color: #ffffff;}
 .icon{float: right;margin-right: 20px;}
+
 article{display: grid;}
+
 .edit-todo{width: 85%;font-size: 16px;color: #fff;background-color: darkgoldenrod;}
+
+.button{margin: 0 10px;padding: 10px;font-size: 14px;color: goldenrod;background-color: #fff;border: none;border-radius: 5px;cursor: pointer;width: 100px;margin-top: 15px;}
+.button.selected{color: #fff;background-color: goldenrod;}
